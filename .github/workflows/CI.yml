@@ -126,7 +126,7 @@ jobs:
           global-json-file: global.json
 
       - name: Create NuGet Package
-        run: dotnet pack --configuration Release --output ${{ env.NuGetDirectory }}
+        run: dotnet pack src/System.CommandLine.Wrapper.sln --configuration Release --output ${{ env.NuGetDirectory }}
 
       - name: Upload NuGet Package as build artifact
         uses: actions/upload-artifact@v3
