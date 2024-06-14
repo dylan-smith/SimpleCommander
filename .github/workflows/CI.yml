@@ -20,6 +20,9 @@ jobs:
 
     runs-on: ${{ matrix.runner-os }}
 
+    permissions:
+      security-events: write
+
     steps:
     - uses: actions/checkout@v4
 
