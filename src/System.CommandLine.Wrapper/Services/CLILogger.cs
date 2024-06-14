@@ -15,9 +15,16 @@ internal static class LogLevel
     public const string VERBOSE = "DEBUG";
 }
 
+/// <summary>
+/// Handles logging CLI output to the console and log files. Creates 2 log files, a normal one and a verbose one. It also redacts sensitive information.
+/// </summary>
 public class CLILogger
 {
+    /// <summary>
+    /// Gets or sets a value indicating whether verbose logging is enabled.
+    /// </summary>
     public virtual bool Verbose { get; set; }
+
     private readonly HashSet<string> _secrets = new();
     private readonly string _logFilePath;
     private readonly string _verboseFilePath;
@@ -36,6 +43,9 @@ public class CLILogger
         "\\b(?<=X-Amz-Credential=)(.+?)\\b",
     };
 
+    /// <summary>
+    /// Creates an instance of CLILogger
+    /// </summary>
     public CLILogger()
     {
         var logStartTime = DateTime.Now;
@@ -54,6 +64,13 @@ public class CLILogger
         _writeToConsoleError = msg => Console.Error.Write(msg);
     }
 
+    /// <summary>
+    /// Creates an instance of CLI Logger but allows you to provide functions to redirect the output to. Primarily used for testing purposes.
+    /// </summary>
+    /// <param name="writeToLog">Will be called whenever output would be written to the log</param>
+    /// <param name="writeToVerboseLog">Will be called whenever verbose output would be written to the log</param>
+    /// <param name="writeToConsoleOut">Will be called whenever output would be written to the console</param>
+    /// <param name="writeToConsoleError">Will be called whenever an error would be written to the console</param>
     public CLILogger(Action<string> writeToLog, Action<string> writeToVerboseLog, Action<string> writeToConsoleOut, Action<string> writeToConsoleError)
     {
         _writeToLog = writeToLog;
@@ -102,8 +119,16 @@ public class CLILogger
         return result;
     }
 
+    /// <summary>
+    /// Log a message with the default log level of Information
+    /// </summary>
+    /// <param name="msg">The message to log</param>
     public virtual void LogInformation(string msg) => Log(msg, LogLevel.INFO);
 
+    /// <summary>
+    /// Log a warning message. Will be printed in yellow on the console.
+    /// </summary>
+    /// <param name="msg">The message to log</param>
     public virtual void LogWarning(string msg)
     {
         Console.ForegroundColor = ConsoleColor.Yellow;
@@ -111,6 +136,10 @@ public class CLILogger
         Console.ResetColor();
     }
 
+    /// <summary>
+    /// Log an error message. Will be printed in red on the console.
+    /// </summary>
+    /// <param name="msg">The message to log</param>
     public virtual void LogError(string msg)
     {
         Console.ForegroundColor = ConsoleColor.Red;
@@ -118,6 +147,10 @@ public class CLILogger
         Console.ResetColor();
     }
 
+    /// <summary>
+    /// Log an exception. If the exception is not an HttpRequestException or a CLIException a generic error message will be logged. The verbose log will still contain the full exception details.
+    /// </summary>
+    /// <param name="ex">The exception to log</param>
     public virtual void LogError(Exception ex)
     {
         if (ex is null)
@@ -138,6 +171,10 @@ public class CLILogger
         _writeToVerboseLog(Redact(FormatMessage(verboseMessage, LogLevel.ERROR)));
     }
 
+    /// <summary>
+    /// Log a verbose message. Will only be printed to the console if verbose logging is enabled.
+    /// </summary>
+    /// <param name="msg">The message to log</param>
     public virtual void LogVerbose(string msg)
     {
         if (Verbose)
@@ -152,6 +189,10 @@ public class CLILogger
         }
     }
 
+    /// <summary>
+    /// Log a debug message. Will be ignored unless the DEBUG_MODE environment variable is set to true, in which case it will be treated as a verbose message.
+    /// </summary>
+    /// <param name="msg">The message to log</param>
     public virtual void LogDebug(string msg)
     {
         if (_debugMode)
@@ -160,6 +201,10 @@ public class CLILogger
         }
     }
 
+    /// <summary>
+    /// Log a success message. Will be printed in green on the console.
+    /// </summary>
+    /// <param name="msg">The message to log</param>
     public virtual void LogSuccess(string msg)
     {
         Console.ForegroundColor = ConsoleColor.Green;
@@ -167,5 +212,9 @@ public class CLILogger
         Console.ResetColor();
     }
 
+    /// <summary>
+    /// Register a secret to be redacted from logs. Secrets will be replaced with "***" in the logs.
+    /// </summary>
+    /// <param name="secret">The value of the secret that should be redacted</param>
     public virtual void RegisterSecret(string secret) => _secrets.Add(secret);
 }

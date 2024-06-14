@@ -4,6 +4,9 @@ using System.Reflection;
 
 namespace System.CommandLine.Wrapper.Extensions;
 
+/// <summary>
+/// Adds some convenience extension methods when dealing with Assembly objects.
+/// </summary>
 public static class AssemblyExtensions
 {
     internal static IEnumerable<Type> GetAllDescendantsOfCommandBase(this Assembly assembly) =>

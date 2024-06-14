@@ -8,8 +8,16 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace System.CommandLine.Wrapper.Extensions;
 
+/// <summary>
+/// Extension to the RootCommand class that registers and wires up all the commands in the calling assembly.
+/// </summary>
 public static class CommandExtensions
 {
+    /// <summary>
+    /// Finds all the command classes in the calling assembly (inherits from CommandBase&lt;TArgs, THandler&gt;) and wires them up.
+    /// </summary>
+    /// <param name="rootCommand">The root command to add the commands to</param>
+    /// <param name="serviceProvider">The service provider to use to resolve dependencies</param>
     [MethodImpl(MethodImplOptions.NoInlining)]
     public static RootCommand AddCommands(this RootCommand rootCommand, ServiceProvider serviceProvider)
     {
