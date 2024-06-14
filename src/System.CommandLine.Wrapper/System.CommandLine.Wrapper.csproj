@@ -7,6 +7,13 @@
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <Authors>Gérald Barré</Authors>
+    <Description>Provides an opinionated framework built on top of System.CommandLine to make it easier to keep your CLI code organized and wire it up for you.</Description>
+    <PackageProjectUrl>https://github.com/dylan-smith/system.commandline.wrapper</PackageProjectUrl>
+    <PackageTags>library, command-line</PackageTags>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
