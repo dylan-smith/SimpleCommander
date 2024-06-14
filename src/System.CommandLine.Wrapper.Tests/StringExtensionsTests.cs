@@ -1,5 +1,5 @@
-﻿using FluentAssertions;
-using System.CommandLine.Wrapper.Extensions;
+﻿using System.CommandLine.Wrapper.Extensions;
+using FluentAssertions;
 using Xunit;
 
 namespace System.CommandLine.Wrapper.Tests;
