@@ -86,25 +86,6 @@ jobs:
       uses: github/codeql-action/analyze@v3
       if: matrix.runner-os == 'ubuntu-latest'
 
-    - name: Create NuGet Package
-      run: dotnet pack --configuration Release --output ${{ env.NuGetDirectory }} --no-build
-
-    - name: Upload NuGet Package as build artifact
-      uses: actions/upload-artifact@v3
-      if: matrix.runner-os == 'ubuntu-latest'
-      with:
-        name: nuget
-        if-no-files-found: error
-        retention-days: 7
-        path: ${{ env.NuGetDirectory }}/*.nupkg
-
-    - name: Install nuget validator
-      run: dotnet tool update Meziantou.Framework.NuGetPackageValidation.Tool --global
-
-    - name: Validate package
-      run: meziantou.validate-nuget-package (Get-ChildItem "${{ env.NuGetDirectory }}/*.nupkg")
-      shell: pwsh
-
   upload-event-file:
     runs-on: ubuntu-latest
     steps:
