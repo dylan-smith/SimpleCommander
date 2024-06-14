@@ -66,7 +66,7 @@ jobs:
     # This is used by the subsequent publish-test-results.yml
     - name: Upload Unit Test Results
       if: always() && matrix.runner-os == 'ubuntu-latest'
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: Unit Test Results
         path: src/System.CommandLine.Wrapper/unit-tests.xml
@@ -74,7 +74,7 @@ jobs:
     # This is used by the subsequent publish-test-results.yml
     - name: Upload Code Coverage Report
       if: always() && matrix.runner-os == 'ubuntu-latest'
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: Code Coverage Report
         path: code-coverage-results.md
@@ -88,7 +88,7 @@ jobs:
     steps:
     # This is used by the subsequent publish-test-results.yaml
     - name: Upload Event File
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: Event File
         path: ${{ github.event_path }}
