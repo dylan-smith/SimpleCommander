@@ -5,6 +5,7 @@
     <RootNamespace>System.CommandLine.Wrapper</RootNamespace>
     <EnablePackageValidation>true</EnablePackageValidation>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <MinVerTagPrefix>v</MinVerTagPrefix>
   </PropertyGroup>
 
   <PropertyGroup>
