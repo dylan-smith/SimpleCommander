@@ -1,7 +1,7 @@
-﻿using System.Linq;
-using System.Text;
-using System.CommandLine.Wrapper.Extensions;
+﻿using System.CommandLine.Wrapper.Extensions;
 using System.CommandLine.Wrapper.Services;
+using System.Linq;
+using System.Text;
 
 namespace System.CommandLine.Wrapper.Commands;
 

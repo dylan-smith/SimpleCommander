@@ -1,10 +1,10 @@
+using System.CommandLine.Wrapper.Commands;
+using System.CommandLine.Wrapper.Services;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
-using System.CommandLine.Wrapper.Commands;
-using System.CommandLine.Wrapper.Services;
 
 namespace System.CommandLine.Wrapper.Extensions;
 

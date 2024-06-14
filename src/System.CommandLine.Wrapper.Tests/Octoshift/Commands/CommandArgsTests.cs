@@ -1,7 +1,7 @@
-﻿using FluentAssertions;
-using Moq;
-using System.CommandLine.Wrapper.Services;
+﻿using System.CommandLine.Wrapper.Services;
 using System.CommandLine.Wrapper.Tests;
+using FluentAssertions;
+using Moq;
 using Xunit;
 
 namespace System.CommandLine.Wrapper.Commands.Tests;
