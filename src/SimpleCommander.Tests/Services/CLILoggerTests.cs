@@ -1,9 +1,8 @@
-﻿using SimpleCommander.Services;
+﻿using System;
 using System.Net;
 using System.Net.Http;
 using FluentAssertions;
 using Xunit;
-using System;
 
 namespace SimpleCommander.Services.Tests;
 

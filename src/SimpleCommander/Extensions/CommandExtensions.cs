@@ -1,12 +1,12 @@
-using SimpleCommander.Commands;
-using SimpleCommander.Services;
+using System;
+using System.CommandLine;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
-using System.CommandLine;
-using System;
+using SimpleCommander.Commands;
+using SimpleCommander.Services;
 
 namespace SimpleCommander.Extensions;
 

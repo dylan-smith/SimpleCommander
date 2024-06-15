@@ -1,9 +1,8 @@
-﻿using SimpleCommander.Tests;
-using FluentAssertions;
+﻿using FluentAssertions;
 using Moq;
-using Xunit;
-using System;
 using SimpleCommander.Services;
+using SimpleCommander.Tests;
+using Xunit;
 
 namespace SimpleCommander.Commands.Tests;
 

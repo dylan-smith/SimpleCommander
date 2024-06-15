@@ -1,8 +1,8 @@
-﻿using SimpleCommander.Extensions;
-using SimpleCommander.Services;
-using System;
+﻿using System;
 using System.Linq;
 using System.Text;
+using SimpleCommander.Extensions;
+using SimpleCommander.Services;
 
 namespace SimpleCommander.Commands;
 
