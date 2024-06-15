@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Text.RegularExpressions;
 
-namespace System.CommandLine.Wrapper.Services;
+namespace SimpleCommander.Services;
 
 internal static class LogLevel
 {

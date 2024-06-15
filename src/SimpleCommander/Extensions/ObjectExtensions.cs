@@ -1,4 +1,4 @@
-namespace System.CommandLine.Wrapper.Extensions;
+namespace SimpleCommander.Extensions;
 
 /// <summary>
 /// Adds some convenience extension methods when dealing with objects.

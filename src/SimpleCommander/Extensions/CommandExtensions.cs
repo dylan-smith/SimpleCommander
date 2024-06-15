@@ -1,12 +1,14 @@
-using System.CommandLine.Wrapper.Commands;
-using System.CommandLine.Wrapper.Services;
+using SimpleCommander.Commands;
+using SimpleCommander.Services;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
+using System.CommandLine;
+using System;
 
-namespace System.CommandLine.Wrapper.Extensions;
+namespace SimpleCommander.Extensions;
 
 /// <summary>
 /// Extension to the RootCommand class that registers and wires up all the commands in the calling assembly.

@@ -1,9 +1,11 @@
-﻿using System.Net;
+﻿using SimpleCommander.Services;
+using System.Net;
 using System.Net.Http;
 using FluentAssertions;
 using Xunit;
+using System;
 
-namespace System.CommandLine.Wrapper.Services.Tests;
+namespace SimpleCommander.Services.Tests;
 
 public class CLILoggerTests
 {

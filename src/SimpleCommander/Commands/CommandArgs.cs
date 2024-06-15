@@ -1,9 +1,10 @@
-﻿using System.CommandLine.Wrapper.Extensions;
-using System.CommandLine.Wrapper.Services;
+﻿using SimpleCommander.Extensions;
+using SimpleCommander.Services;
+using System;
 using System.Linq;
 using System.Text;
 
-namespace System.CommandLine.Wrapper.Commands;
+namespace SimpleCommander.Commands;
 
 /// <summary>
 /// Inherit from this class to define the arguments for a command. Override the Validate method to add custom validation logic.

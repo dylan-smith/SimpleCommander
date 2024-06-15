@@ -1,4 +1,7 @@
-namespace System.CommandLine.Wrapper.Commands;
+using System;
+using System.CommandLine;
+
+namespace SimpleCommander.Commands;
 
 /// <summary>
 /// The base class for all commands. Inherit from this class to define a new command, and define all the command options as public properties of type Option&lt;T&gt;.

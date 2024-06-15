@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 
-namespace System.CommandLine.Wrapper.Commands;
+namespace SimpleCommander.Commands;
 
 /// <summary>
 /// All command handlers must implement this interface in order to be executed.

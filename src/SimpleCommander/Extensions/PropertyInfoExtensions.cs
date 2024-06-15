@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using System.Reflection;
 
-namespace System.CommandLine.Wrapper.Extensions;
+namespace SimpleCommander.Extensions;
 
 /// <summary>
 /// Adds some convenience extension methods when dealing with PropertyInfo objects.

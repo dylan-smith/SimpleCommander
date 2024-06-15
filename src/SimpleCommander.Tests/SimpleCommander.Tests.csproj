@@ -32,7 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\System.CommandLine.Wrapper\System.CommandLine.Wrapper.csproj" />
+    <ProjectReference Include="..\SimpleCommander\SimpleCommander.csproj" />
   </ItemGroup>
 
 </Project>

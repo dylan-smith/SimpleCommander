@@ -2,16 +2,16 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <RootNamespace>System.CommandLine.Wrapper</RootNamespace>
+    <RootNamespace>SimpleCommander</RootNamespace>
     <EnablePackageValidation>true</EnablePackageValidation>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <MinVerTagPrefix>v</MinVerTagPrefix>
   </PropertyGroup>
 
   <PropertyGroup>
-    <Authors>Gérald Barré</Authors>
+    <Authors>Dylan Smith</Authors>
     <Description>Provides an opinionated framework built on top of System.CommandLine to make it easier to keep your CLI code organized and wire it up for you.</Description>
-    <PackageProjectUrl>https://github.com/dylan-smith/system.commandline.wrapper</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/dylan-smith/SimpleCommander</PackageProjectUrl>
     <PackageTags>library, command-line</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIcon>icon.png</PackageIcon>

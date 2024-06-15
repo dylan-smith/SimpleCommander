@@ -1,4 +1,6 @@
-namespace System.CommandLine.Wrapper;
+using System;
+
+namespace SimpleCommander;
 
 /// <summary>
 /// These represent known exceptions that have user-friendly messages. These will be logged and the message will be displayed to the user. Any other exception type will be hidden from the non-verbose log.

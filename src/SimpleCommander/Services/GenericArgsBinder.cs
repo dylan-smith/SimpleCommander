@@ -1,7 +1,8 @@
+using System.CommandLine;
 using System.CommandLine.Binding;
 using System.Linq;
 
-namespace System.CommandLine.Wrapper.Services;
+namespace SimpleCommander.Services;
 
 /// <summary>
 /// A custom Binder that uses reflection to map the arguments of a command into a CommandArgs instance. It does the matching based on the property names of the CommandArgs class and the Option names of the command.

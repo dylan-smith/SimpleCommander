@@ -1,7 +1,7 @@
 using System.Linq;
 using Moq;
 
-namespace System.CommandLine.Wrapper.Tests;
+namespace SimpleCommander.Tests;
 
 public static class TestHelpers
 {

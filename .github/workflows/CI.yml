@@ -42,16 +42,16 @@ jobs:
         global-json-file: global.json
 
     - name: dotnet format
-      run: dotnet format src/System.CommandLine.Wrapper.sln --verify-no-changes
+      run: dotnet format src/SimpleCommander.sln --verify-no-changes
 
     - name: Restore dependencies
-      run: dotnet restore src/System.CommandLine.Wrapper.sln
+      run: dotnet restore src/SimpleCommander.sln
 
     - name: Build
-      run: dotnet build src/System.CommandLine.Wrapper.sln --no-restore /p:TreatWarningsAsErrors=true
+      run: dotnet build src/SimpleCommander.sln --no-restore /p:TreatWarningsAsErrors=true
 
     - name: Unit Test
-      run: dotnet test src/System.CommandLine.Wrapper.Tests/System.CommandLine.Wrapper.Tests.csproj --no-build --verbosity normal --logger:"junit;LogFilePath=unit-tests.xml" --collect:"XPlat Code Coverage" --results-directory ./coverage
+      run: dotnet test src/SimpleCommander.Tests/SimpleCommander.Tests.csproj --no-build --verbosity normal --logger:"junit;LogFilePath=unit-tests.xml" --collect:"XPlat Code Coverage" --results-directory ./coverage
 
     - name: Copy Coverage To Predictable Location
       if: always() && matrix.runner-os == 'ubuntu-latest'
@@ -72,7 +72,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: Unit Test Results
-        path: src/System.CommandLine.Wrapper.Tests/unit-tests.xml
+        path: src/SimpleCommander.Tests/unit-tests.xml
 
     # This is used by the subsequent publish-test-results.yml
     - name: Upload Code Coverage Report
@@ -109,7 +109,7 @@ jobs:
           global-json-file: global.json
 
       - name: Create NuGet Package
-        run: dotnet pack src/System.CommandLine.Wrapper.sln --configuration Release --output ${{ env.NuGetDirectory }}
+        run: dotnet pack src/SimpleCommander.sln --configuration Release --output ${{ env.NuGetDirectory }}
 
       - name: Upload NuGet Package as build artifact
         uses: actions/upload-artifact@v4

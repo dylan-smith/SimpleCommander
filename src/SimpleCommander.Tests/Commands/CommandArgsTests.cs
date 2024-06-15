@@ -1,10 +1,11 @@
-﻿using System.CommandLine.Wrapper.Services;
-using System.CommandLine.Wrapper.Tests;
+﻿using SimpleCommander.Tests;
 using FluentAssertions;
 using Moq;
 using Xunit;
+using System;
+using SimpleCommander.Services;
 
-namespace System.CommandLine.Wrapper.Commands.Tests;
+namespace SimpleCommander.Commands.Tests;
 
 public class CommandArgsTests
 {
