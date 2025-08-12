@@ -27,7 +27,7 @@ jobs:
       security-events: write
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
 
     - name: Initialize CodeQL
       if: matrix.runner-os == 'ubuntu-latest'
@@ -99,7 +99,7 @@ jobs:
   create-nuget:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0 # Get all history to allow automatic versioning using MinVer
 
@@ -131,7 +131,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [ build, create-nuget ]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - uses: actions/download-artifact@v4
         with:
