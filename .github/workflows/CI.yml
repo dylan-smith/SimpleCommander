@@ -69,7 +69,7 @@ jobs:
     # This is used by the subsequent publish-test-results.yml
     - name: Upload Unit Test Results
       if: always() && matrix.runner-os == 'ubuntu-latest'
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       with:
         name: Unit Test Results
         path: src/SimpleCommander.Tests/unit-tests.xml
@@ -77,7 +77,7 @@ jobs:
     # This is used by the subsequent publish-test-results.yml
     - name: Upload Code Coverage Report
       if: always() && matrix.runner-os == 'ubuntu-latest'
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       with:
         name: Code Coverage Report
         path: code-coverage-results.md
@@ -91,7 +91,7 @@ jobs:
     steps:
     # This is used by the subsequent publish-test-results.yaml
     - name: Upload Event File
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       with:
         name: Event File
         path: ${{ github.event_path }}
@@ -112,7 +112,7 @@ jobs:
         run: dotnet pack src/SimpleCommander.sln --configuration Release --output ${{ env.NuGetDirectory }}
 
       - name: Upload NuGet Package as build artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: nuget
           if-no-files-found: error
